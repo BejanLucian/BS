@@ -1,0 +1,85 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskPlanner.Ux", "TaskPlanner.Ux\TaskPlanner.Ux.csproj", "{0AAEF7B4-258D-4AD7-828D-258FDF67ED79}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskPlanner.Domain", "TaskPlanner.Domain\TaskPlanner.Domain.csproj", "{7F3A1DF6-26C8-4C4D-8B42-C4BF9448F8E8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskPlanner.Services", "TaskPlanner.Services\TaskPlanner.Services.csproj", "{096BD751-0E29-4CD3-9342-A50179CD8A86}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskPlanner.Infrastructure", "TaskPlanner.Infrastructure\TaskPlanner.Infrastructure.csproj", "{744C7580-DA24-4463-B780-63E4F0CEEB22}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskPlanner.DataAccess", "TaskPlanner.Dal\TaskPlanner.DataAccess.csproj", "{E07B0609-0966-4417-91F0-D479029486B7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Attachments", "Attachments\Attachments.csproj", "{08C710A3-A14F-4736-A824-AA8061A76B9C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskPlanner.Bootstrapper", "TaskPlanner.Bootstrapper\TaskPlanner.Bootstrapper.csproj", "{863AC46C-78BA-47B1-B867-DAE5A4C11470}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 8
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://flexerp.visualstudio.com/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Attachments\\Attachments.csproj
+		SccProjectName1 = Attachments
+		SccLocalPath1 = Attachments
+		SccProjectUniqueName2 = TaskPlanner.Dal\\TaskPlanner.DataAccess.csproj
+		SccProjectName2 = TaskPlanner.Dal
+		SccLocalPath2 = TaskPlanner.Dal
+		SccProjectUniqueName3 = TaskPlanner.Domain\\TaskPlanner.Domain.csproj
+		SccProjectName3 = TaskPlanner.Domain
+		SccLocalPath3 = TaskPlanner.Domain
+		SccProjectUniqueName4 = TaskPlanner.Infrastructure\\TaskPlanner.Infrastructure.csproj
+		SccProjectName4 = TaskPlanner.Infrastructure
+		SccLocalPath4 = TaskPlanner.Infrastructure
+		SccProjectUniqueName5 = TaskPlanner.Services\\TaskPlanner.Services.csproj
+		SccProjectName5 = TaskPlanner.Services
+		SccLocalPath5 = TaskPlanner.Services
+		SccProjectUniqueName6 = TaskPlanner.Ux\\TaskPlanner.Ux.csproj
+		SccProjectName6 = TaskPlanner.Ux
+		SccLocalPath6 = TaskPlanner.Ux
+		SccProjectUniqueName7 = TaskPlanner.Bootstrapper\\TaskPlanner.Bootstrapper.csproj
+		SccProjectName7 = TaskPlanner.Bootstrapper
+		SccLocalPath7 = TaskPlanner.Bootstrapper
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0AAEF7B4-258D-4AD7-828D-258FDF67ED79}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0AAEF7B4-258D-4AD7-828D-258FDF67ED79}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0AAEF7B4-258D-4AD7-828D-258FDF67ED79}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0AAEF7B4-258D-4AD7-828D-258FDF67ED79}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F3A1DF6-26C8-4C4D-8B42-C4BF9448F8E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F3A1DF6-26C8-4C4D-8B42-C4BF9448F8E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F3A1DF6-26C8-4C4D-8B42-C4BF9448F8E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F3A1DF6-26C8-4C4D-8B42-C4BF9448F8E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{096BD751-0E29-4CD3-9342-A50179CD8A86}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{096BD751-0E29-4CD3-9342-A50179CD8A86}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{096BD751-0E29-4CD3-9342-A50179CD8A86}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{096BD751-0E29-4CD3-9342-A50179CD8A86}.Release|Any CPU.Build.0 = Release|Any CPU
+		{744C7580-DA24-4463-B780-63E4F0CEEB22}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{744C7580-DA24-4463-B780-63E4F0CEEB22}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{744C7580-DA24-4463-B780-63E4F0CEEB22}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{744C7580-DA24-4463-B780-63E4F0CEEB22}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E07B0609-0966-4417-91F0-D479029486B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E07B0609-0966-4417-91F0-D479029486B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E07B0609-0966-4417-91F0-D479029486B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E07B0609-0966-4417-91F0-D479029486B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{08C710A3-A14F-4736-A824-AA8061A76B9C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{08C710A3-A14F-4736-A824-AA8061A76B9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{08C710A3-A14F-4736-A824-AA8061A76B9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{08C710A3-A14F-4736-A824-AA8061A76B9C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{863AC46C-78BA-47B1-B867-DAE5A4C11470}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{863AC46C-78BA-47B1-B867-DAE5A4C11470}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{863AC46C-78BA-47B1-B867-DAE5A4C11470}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{863AC46C-78BA-47B1-B867-DAE5A4C11470}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

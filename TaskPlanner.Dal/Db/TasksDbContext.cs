@@ -5,7 +5,7 @@ namespace TaskPlanner.DataAccess.Db
 {
     internal class TasksDbContext : DbContext, ITasksDbContext
     {
-        private const string ConnectionConfigurationName = "PidgeonLoftDB";
+        private const string ConnectionConfigurationName = "TaskPlannertDB";
 
         public TasksDbContext()
             : base(ConfigurationManager.ConnectionStrings[ConnectionConfigurationName].ConnectionString)

@@ -121,37 +121,36 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="App_Start\BundleConfig.cs" />
-    <Compile Include="App_Start\FilterConfig.cs" />
-    <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="OnServer\App_Start\BundleConfig.cs" />
+    <Compile Include="OnServer\App_Start\FilterConfig.cs" />
+    <Compile Include="OnServer\App_Start\RouteConfig.cs" />
+    <Compile Include="OnServer\App_Start\WebApiConfig.cs" />
+    <Compile Include="OnServer\Controllers\MainController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\bootstrap.css" />
-    <Content Include="Content\bootstrap.min.css" />
-    <Content Include="favicon.ico" />
-    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="OnClient\3rdParties\angucomplete\angucomplete-alt.css" />
+    <Content Include="OnClient\3rdParties\angucomplete\angucomplete-alt.js" />
+    <Content Include="OnClient\3rdParties\angularComponents\angular-breadcrumb.js" />
+    <Content Include="OnClient\3rdParties\angularComponents\angular-resource.js" />
+    <Content Include="OnClient\3rdParties\angularComponents\angular-ui-router.js" />
+    <Content Include="OnClient\3rdParties\angularComponents\ui-bootstrap-0.12.0.js" />
+    <Content Include="OnClient\3rdParties\angular\angular.js" />
+    <Content Include="OnClient\3rdParties\bootstrap\bootstrap.css" />
     <Content Include="Global.asax" />
-    <Content Include="Content\Site.css" />
-    <Content Include="Scripts\bootstrap.js" />
-    <Content Include="Scripts\bootstrap.min.js" />
-    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
-    <Content Include="Scripts\jquery-1.10.2.js" />
-    <Content Include="Scripts\jquery-1.10.2.min.js" />
-    <None Include="Scripts\jquery.validate-vsdoc.js" />
-    <Content Include="Scripts\jquery.validate.js" />
-    <Content Include="Scripts\jquery.validate.min.js" />
-    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
-    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
-    <Content Include="Scripts\modernizr-2.6.2.js" />
-    <Content Include="Scripts\respond.js" />
-    <Content Include="Scripts\respond.min.js" />
-    <Content Include="Scripts\_references.js" />
+    <Content Include="OnClient\app\Css\Site.css" />
+    <Content Include="OnClient\3rdParties\bootstrap\bootstrap.js" />
+    <None Include="OnClient\3rdParties\jquery\jquery-1.10.2.intellisense.js" />
+    <Content Include="OnClient\3rdParties\jquery\jquery-1.10.2.js" />
+    <None Include="OnClient\3rdParties\jquery\jquery.validate-vsdoc.js" />
+    <Content Include="OnClient\3rdParties\jquery\jquery.validate.js" />
+    <Content Include="OnClient\3rdParties\jquery\jquery.validate.unobtrusive.js" />
+    <Content Include="OnClient\3rdParties\modernizr\modernizr-2.6.2.js" />
+    <Content Include="OnClient\app\Scripts\taskPlannerApp.js" />
+    <Content Include="OnClient\app\Scripts\_references.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -163,19 +162,14 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\Main\Index.cshtml" />
+    <Content Include="Views\Main\Placeholder.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
+    <Folder Include="OnClient\app\Resources\" />
+    <Folder Include="OnServer\Models\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

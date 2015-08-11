@@ -1,9 +1,8 @@
 ﻿<div class="form-horizontal" ng-controller="TasksController">
     <div ng-repeat="task in TasksList track by task.Id">
-        <label>{{task.Title}}</label>
-
+        <div task-with-commands scope="task"> </div>
     </div>
 
-    <button class="btn btn-primary btnSubmit" ng-click="createNewTask()">Create</button>
+    <button class="btn btn-primary" ng-click="createNewTask()">Create</button>
 
 </div>

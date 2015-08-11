@@ -154,6 +154,7 @@
     <Content Include="OnClient\3rdParties\jquery\jquery.validate.unobtrusive.js" />
     <Content Include="OnClient\3rdParties\modernizr\modernizr-2.6.2.js" />
     <Content Include="OnClient\app\Scripts\Data\dataServices.js" />
+    <Content Include="OnClient\app\Scripts\Reusable\taskWithCommands.js" />
     <Content Include="OnClient\app\Scripts\taskPlannerApp.js" />
     <Content Include="OnClient\app\Scripts\Controllers\tasksController.js" />
     <Content Include="OnClient\app\Scripts\_references.js" />
@@ -171,6 +172,7 @@
     <Content Include="Views\Main\Index.cshtml" />
     <Content Include="Views\Main\Placeholder.cshtml" />
     <Content Include="Views\Task\Index.cshtml" />
+    <Content Include="Views\Task\TaskWithCommands.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="OnClient\app\Resources\" />

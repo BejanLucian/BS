@@ -13,5 +13,11 @@ namespace TaskPlanner.Ux.OnServer.Controllers
         {
             return PartialView();
         }
+
+        public PartialViewResult TaskWithCommands()
+        {
+            return PartialView();
+        }
+        
     }
 }

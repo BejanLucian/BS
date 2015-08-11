@@ -53,9 +53,8 @@
                 }
             })
             .state('Administration', {
-                url: "Administration",
-                templateUrl: "Administration/Index",
-                controller: "Administration",
+                url: "/Administration",
+                templateUrl: "/Task/TaskWithCommands",
                 ncyBreadcrumb: {
                     label: 'Administration',
                     parent: 'MainMenu'

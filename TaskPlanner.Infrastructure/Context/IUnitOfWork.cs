@@ -6,5 +6,7 @@ namespace TaskPlanner.Infrastructure.Context
     {
         event EventHandler OnDispose;
         void CommitChanges();
+
+        T GetDataContext<T>() where T : IDbContext;
     }
 }

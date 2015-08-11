@@ -6,14 +6,13 @@ namespace TaskPlanner.Domain.Entities
 {
     abstract public class TaskBase : ITask
     {
-        public TaskBase(string title, ITask parent)
+        public TaskBase(string title)
         {
             this.Title = title;
-            this.Parent = parent;
+            this.Id = Guid.NewGuid();
         }
 
-        public ITask Parent { get; protected set; }
-
+        public Guid Id { get; private set; }
         public string Title { get; protected set; }
 
         public string Description { get; set; }
@@ -37,19 +36,8 @@ namespace TaskPlanner.Domain.Entities
             return this.GetType() == typeof(Topic);
         }
 
-        public Topic GetEnclosingTopic()
-        {
-            ITask currentTask = this;
-            while (true)
-            {
-                if ((currentTask.Parent == null) || (currentTask.Parent.IsTopic()))
-                {
-                    return currentTask.Parent as Topic;
-                }
-                currentTask = currentTask.Parent;
-            }
-        }
-
+        public Topic EnclosingTopic { get; set; }
+     
         // Abstract:
         public abstract bool NeedsToBeDone();
         public abstract IList<ITask> Preconditions { get; }

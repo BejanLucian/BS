@@ -1,4 +1,4 @@
-﻿namespace TaskPlanner.Infrastructure.Context
+namespace TaskPlanner.Infrastructure.Context
 {
     public interface IUnitOfWorkProvider
     {

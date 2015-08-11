@@ -13,13 +13,17 @@ namespace TaskPlanner.Infrastructure.Context
         /// </summary>
         /// <typeparam name="TEntity">The type entity for which a set should be returned.</typeparam>
         /// <returns>A set for the given entity type.</returns>
-        IQueryable Set<TEntity>() where TEntity : class;
+        IQueryable<TEntity> Set<TEntity>() where TEntity : class;
 
         /// <summary>
         /// Returns a DbSet instance for access to entities of the given type in the context, the ObjectStateManager, and the underlying store.
         /// </summary>
         /// <returns>A set for the given entity type.</returns>
         IQueryable Set(Type entityType);
+
+        void Add(object entityInstance);
+
+        void Remove(object entityInstance);
 
         /// <summary>
         /// Saves all changes made in this context to the underlying database.

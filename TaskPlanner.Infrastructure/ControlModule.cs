@@ -5,10 +5,12 @@ namespace TaskPlanner.Infrastructure
 {
     public static class ControlModule
     {
-        public static void Register(UnityContainer container)
+        public static void Register(IUnityContainer container)
         {
-            container.RegisterType<IUnitOfWork, UnitOfWork>();
-            container.RegisterType<IUnitOfWorkProvider, UnitOfWorkProvider>();
+            container.RegisterType<IUnitOfWorkProvider, UnitOfWorkProvider>(new ContainerControlledLifetimeManager());
+            container.RegisterType<IUnitOfWork, UnitOfWork>(new ContainerControlledLifetimeManager());
         }
+
+
     }
 }

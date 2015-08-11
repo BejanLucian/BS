@@ -1,22 +1,52 @@
-﻿using TaskPlanner.Domain.StorageIoc;
+﻿using System;
+using System.Linq;
+using TaskPlanner.Domain.Entities;
+using TaskPlanner.Domain.StorageIoc;
+using TaskPlanner.Infrastructure.Context;
 
 namespace TaskPlanner.DataAccess.Repositories
 {
-    internal class RepositoryBase<T> : IRepository<T>
+    public abstract class RepositoryBase<TEntity,TDataContext> : IRepository<TEntity>
+        where TEntity : class, IEntity
+        where TDataContext : IDbContext
     {
-        public RepositoryBase()
+        protected IUnitOfWorkProvider _unitOfWorkProvider;
+
+        public RepositoryBase(IUnitOfWorkProvider unitOfWorkProvider)
         {
-            
+            _unitOfWorkProvider = unitOfWorkProvider;
         }
 
-        public void Add(T task)
+        public void Add(TEntity instance)
         {
-            throw new System.NotImplementedException();
+            DataContext.Add(instance);
         }
 
-        public void Remove(T task)
+        public void Remove(TEntity instance)
         {
-            throw new System.NotImplementedException();
+            DataContext.Remove(instance);
         }
+
+        public TEntity GetById(Guid id)
+        {
+            return EntitySet.FirstOrDefault(x => x.Id == id);
+        }
+
+        protected IQueryable<TEntity> EntitySet
+        {
+            get
+            {
+                return DataContext.Set<TEntity>();
+            }
+        }
+
+        protected IDbContext DataContext
+        {
+            get
+            {
+                return _unitOfWorkProvider.GetCurrent().GetDataContext<TDataContext>();
+            }
+        }
+
     }
 }

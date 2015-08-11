@@ -4,12 +4,21 @@ using System.Collections.Generic;
 
 namespace TaskPlanner.Infrastructure.Context
 {
-    internal class UnitOfWorkProvider : IUnitOfWorkProvider
+    public class UnitOfWorkProvider : IUnitOfWorkProvider
     {
         private readonly IWorkflowContextIdProvider _contextIdProvider;
         private readonly Func<IUnitOfWork> _createUnitOfWork;
-        private static readonly IDictionary<int,IUnitOfWork> Instances=new ConcurrentDictionary<int, IUnitOfWork>();
-        public UnitOfWorkProvider(IWorkflowContextIdProvider contextIdProvider, Func<IUnitOfWork> createUnitOfWork)
+        private static readonly IDictionary<int, IUnitOfWork> Instances = new ConcurrentDictionary<int, IUnitOfWork>();
+
+        // Consumer contructor
+        public UnitOfWorkProvider(IWorkflowContextIdProvider contextIdProvider, IDataContextFactory dataContextFactory)
+            : this(contextIdProvider, () => new UnitOfWork(dataContextFactory))
+        {
+            
+        }
+
+        // Internal testable constructor
+        internal UnitOfWorkProvider(IWorkflowContextIdProvider contextIdProvider, Func<IUnitOfWork> createUnitOfWork)
         {
             _contextIdProvider = contextIdProvider;
             _createUnitOfWork = createUnitOfWork;
@@ -19,13 +28,13 @@ namespace TaskPlanner.Infrastructure.Context
         {
             IUnitOfWork currentUow;
             var currentContextId = _contextIdProvider.GetWorflowAttachedContextIdentifier();
-            var newUow = _createUnitOfWork();
-            newUow.OnDispose += OnUowDispose;
-
+            
             lock (Instances)
             {
                 if (!Instances.ContainsKey(currentContextId))
                 {
+                    var newUow = _createUnitOfWork();
+                    newUow.OnDispose += OnUowDispose;
                     Instances.Add(currentContextId, newUow);
                 }
 

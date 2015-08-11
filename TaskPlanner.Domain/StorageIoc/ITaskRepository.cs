@@ -7,7 +7,7 @@ namespace TaskPlanner.Domain.StorageIoc
 {
     public interface ITaskRepository:IRepository<ITask>
     {
-        IEnumerable<ITask> GetByParentId(Guid parentId);
+        IEnumerable<ITask> GetByEnclosingTopicId(Guid? topicId);
 
         ITask GetById(Guid taskId);
 

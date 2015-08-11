@@ -9,7 +9,6 @@ namespace TaskPlanner.Services.DataContracts
         public string Title { get; set; }
         public string Details { get; set; }
 
-        [Required]
         public Guid ParentId { get; set; }
 
 

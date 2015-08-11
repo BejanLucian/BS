@@ -7,7 +7,7 @@ namespace TaskPlanner.Bootstrapper
 {
     internal class UnityResolver : IDependencyResolver
     {
-        protected IUnityContainer container;
+        private readonly IUnityContainer _container;
 
         public UnityResolver(IUnityContainer container)
         {
@@ -15,17 +15,18 @@ namespace TaskPlanner.Bootstrapper
             {
                 throw new ArgumentNullException("container");
             }
-            this.container = container;
+            this._container = container;
         }
 
         public object GetService(Type serviceType)
         {
             try
             {
-                return container.Resolve(serviceType);
+                return _container.Resolve(serviceType);
             }
-            catch (ResolutionFailedException)
+            catch (ResolutionFailedException ex)
             {
+                //throw new Exception(string.Format("Cannot resolve type <{0}>.", serviceType), ex);
                 return null;
             }
         }
@@ -34,7 +35,7 @@ namespace TaskPlanner.Bootstrapper
         {
             try
             {
-                return container.ResolveAll(serviceType);
+                return _container.ResolveAll(serviceType);
             }
             catch (ResolutionFailedException)
             {
@@ -44,13 +45,13 @@ namespace TaskPlanner.Bootstrapper
 
         public IDependencyScope BeginScope()
         {
-            var child = container.CreateChildContainer();
+            var child = _container.CreateChildContainer();
             return new UnityResolver(child);
         }
 
         public void Dispose()
         {
-            container.Dispose();
+            _container.Dispose();
         }
     }
 }

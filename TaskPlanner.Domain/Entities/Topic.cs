@@ -6,9 +6,13 @@ namespace TaskPlanner.Domain.Entities
 {
     public class Topic : TaskBase
     {
-        public Topic(string title, ITask parent) : base(title, parent)
+        public Topic(string title) : base(title)
         {
             Subtasks = new List<ITask>();
+        }
+
+        private Topic() : this(string.Empty)
+        {
         }
 
         public IList<ITask> Subtasks { get; private set; }
@@ -58,7 +62,7 @@ namespace TaskPlanner.Domain.Entities
                 var innerOrOuterPreconditions = this.Subtasks.SelectMany(x => x.Preconditions).Distinct();
                 foreach (var candidate in innerOrOuterPreconditions)
                 {
-                    if (candidate.GetEnclosingTopic() != this)
+                    if (candidate.EnclosingTopic != this)
                     {
                         externalPreconditions.Add(candidate);
                     }

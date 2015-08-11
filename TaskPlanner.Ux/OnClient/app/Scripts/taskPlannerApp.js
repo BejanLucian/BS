@@ -22,17 +22,17 @@
                 templateUrl: "Main/Index",
                 controller: "",
                 ncyBreadcrumb: {
-                    label: 'Menu',
-                },
+                    label: 'Menu'
+                }
             })
             .state('ManageTasks', {
-                url: "Tasks/Manage",
-                templateUrl: "Tasks/Index",
-                controller: "Tasks",
+                url: "/Tasks/Index",
+                templateUrl: "Task/Index",
+                controller: "TasksController",
                 ncyBreadcrumb: {
                     label: 'Manage Tasks',
                     parent: 'MainMenu'
-                },
+                }
             })
             .state('ManageParticipants', {
                 url: "Participants",
@@ -41,7 +41,7 @@
                 ncyBreadcrumb: {
                     label: 'Manage Participants',
                     parent: 'MainMenu'
-                },
+                }
             })
             .state('Reports', {
                 url: "Reports",
@@ -50,7 +50,7 @@
                 ncyBreadcrumb: {
                     label: 'Reports',
                     parent: 'MainMenu'
-                },
+                }
             })
             .state('Administration', {
                 url: "Administration",
@@ -59,9 +59,15 @@
                 ncyBreadcrumb: {
                     label: 'Administration',
                     parent: 'MainMenu'
-                },
+                }
             });
 
     }
-    ]);
+    ]).
+run(['$state', '$rootScope', function ($state, $rootScope) {
+    $rootScope.$on('$stateChangeStart', function (e, toState, toParams, fromState, fromParams) {
+        $rootScope.parentState = $state.$current.name;
+    });
+}]);
+
 

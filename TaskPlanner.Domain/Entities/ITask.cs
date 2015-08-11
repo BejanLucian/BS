@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace TaskPlanner.Domain.Entities
 {
-    public interface ITask
+    public interface ITask : IEntity
     {
         string Title { get; }
 
@@ -27,13 +27,10 @@ namespace TaskPlanner.Domain.Entities
         /// <returns></returns>
         int GetNestingLevel();
 
-        ITask Parent { get; }
-
         bool IsJob();
         bool IsTopic();
 
-        Topic GetEnclosingTopic();
-
+        Topic EnclosingTopic { get; set; }
     }
 
     public enum TaskState

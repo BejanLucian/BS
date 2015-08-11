@@ -43,6 +43,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\Attachments\Dependencies\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -125,10 +128,11 @@
     <Compile Include="OnServer\App_Start\FilterConfig.cs" />
     <Compile Include="OnServer\App_Start\RouteConfig.cs" />
     <Compile Include="OnServer\App_Start\WebApiConfig.cs" />
-    <Compile Include="OnServer\Controllers\MainController.cs" />
+    <Compile Include="OnServer\PageControllers\MainController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="OnServer\PageControllers\TaskController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -149,7 +153,9 @@
     <Content Include="OnClient\3rdParties\jquery\jquery.validate.js" />
     <Content Include="OnClient\3rdParties\jquery\jquery.validate.unobtrusive.js" />
     <Content Include="OnClient\3rdParties\modernizr\modernizr-2.6.2.js" />
+    <Content Include="OnClient\app\Scripts\Data\dataServices.js" />
     <Content Include="OnClient\app\Scripts\taskPlannerApp.js" />
+    <Content Include="OnClient\app\Scripts\Controllers\tasksController.js" />
     <Content Include="OnClient\app\Scripts\_references.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -164,10 +170,10 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Main\Index.cshtml" />
     <Content Include="Views\Main\Placeholder.cshtml" />
+    <Content Include="Views\Task\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="OnClient\app\Resources\" />
-    <Folder Include="OnServer\Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -200,7 +206,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>20550</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:20550/</IISUrl>
+          <IISUrl>http://localhost:9000/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

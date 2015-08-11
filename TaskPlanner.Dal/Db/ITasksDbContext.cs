@@ -1,6 +1,8 @@
-﻿namespace TaskPlanner.DataAccess.Db
+﻿using TaskPlanner.Infrastructure.Context;
+
+namespace TaskPlanner.DataAccess.Db
 {
-    public interface ITasksDbContext
+    public interface ITasksDbContext : IDbContext
     {
     }
 }

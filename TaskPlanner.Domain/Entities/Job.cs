@@ -10,12 +10,18 @@ namespace TaskPlanner.Domain.Entities
         private DateTime _completedOn;
         private IList<Guid> _assignedTo;
         private TaskState _state;
+        private Topic _directEnclosingTopic;
 
-        public Job(string title, ITask parent):base(title, parent)
+        public Job(string title)
+            : base(title)
         {
             this._preconditions = new List<ITask>();
             this._assignedTo = new List<Guid>();
             this._state = TaskState.Created;
+        }
+
+        private Job():this(string.Empty)
+        {
         }
 
         public override DateTime CompletedOn

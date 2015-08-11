@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Dependencies\EntityFramework.dll" />
+    <Content Include="Dependencies\EntityFramework.SqlServer.dll" />
     <Content Include="Dependencies\Microsoft.Practices.Unity.Configuration.dll" />
     <Content Include="Dependencies\Microsoft.Practices.Unity.dll" />
     <Content Include="Dependencies\Unity.Mvc4.dll" />

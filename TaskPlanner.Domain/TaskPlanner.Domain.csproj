@@ -49,6 +49,7 @@
     <Compile Include="ControlModule.cs" />
     <Compile Include="Coordinators\ITaskCoordinator.cs" />
     <Compile Include="Coordinators\TaskCoordinator.cs" />
+    <Compile Include="Entities\IEntity.cs" />
     <Compile Include="Entities\ITask.cs" />
     <Compile Include="Entities\Job.cs" />
     <Compile Include="Entities\TaskBase.cs" />

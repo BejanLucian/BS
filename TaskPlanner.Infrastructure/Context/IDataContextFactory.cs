@@ -2,6 +2,6 @@
 {
     public interface IDataContextFactory
     {
-        T Create<T>();
+        IDbContext Create<T>() where T : IDbContext;
     }
 }
